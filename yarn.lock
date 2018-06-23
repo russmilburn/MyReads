@@ -540,7 +540,7 @@ babel-loader@7.1.2:
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.1.2.tgz#f6cbe122710f1aa2af4d881c6d5b54358ca24126"
   dependencies:
     find-cache-dir "^1.0.0"
-    loader-utils "^1.0.2"
+    loader-services "^1.0.2"
     mkdirp "^0.5.1"
 
 babel-messages@^6.23.0:
@@ -1017,7 +1017,7 @@ base@^0.11.1:
   resolved "https://registry.yarnpkg.com/base/-/base-0.11.2.tgz#7bde5ced145b6d551a90db87f83c558b4eb48a8f"
   dependencies:
     cache-base "^1.0.1"
-    class-utils "^0.3.5"
+    class-services "^0.3.5"
     component-emitter "^1.2.1"
     define-property "^1.0.0"
     isobject "^3.0.1"
@@ -1419,7 +1419,7 @@ clap@^1.0.9:
 
 class-utils@^0.3.5:
   version "0.3.6"
-  resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
+  resolved "https://registry.yarnpkg.com/class-services/-/class-services-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
   dependencies:
     arr-union "^3.1.0"
     define-property "^0.2.5"
@@ -1738,8 +1738,8 @@ css-loader@0.28.7:
     babel-code-frame "^6.11.0"
     css-selector-tokenizer "^0.7.0"
     cssnano ">=2.6.1 <4"
-    icss-utils "^2.1.0"
-    loader-utils "^1.0.2"
+    icss-services "^2.1.0"
+    loader-services "^1.0.2"
     lodash.camelcase "^4.3.0"
     object-assign "^4.0.1"
     postcss "^5.0.6"
@@ -2132,7 +2132,7 @@ elliptic@^6.0.0:
     hmac-drbg "^1.0.0"
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
-    minimalistic-crypto-utils "^1.0.0"
+    minimalistic-crypto-services "^1.0.0"
 
 emoji-regex@^6.1.0:
   version "6.5.1"
@@ -2296,14 +2296,14 @@ eslint-loader@1.9.0:
   resolved "https://registry.yarnpkg.com/eslint-loader/-/eslint-loader-1.9.0.tgz#7e1be9feddca328d3dcfaef1ad49d5beffe83a13"
   dependencies:
     loader-fs-cache "^1.0.0"
-    loader-utils "^1.0.2"
+    loader-services "^1.0.2"
     object-assign "^4.0.1"
     object-hash "^1.1.4"
     rimraf "^2.6.1"
 
 eslint-module-utils@^2.1.1:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.2.0.tgz#b270362cd88b1a48ad308976ce7fa54e98411746"
+  resolved "https://registry.yarnpkg.com/eslint-module-services/-/eslint-module-services-2.2.0.tgz#b270362cd88b1a48ad308976ce7fa54e98411746"
   dependencies:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
@@ -2323,7 +2323,7 @@ eslint-plugin-import@2.8.0:
     debug "^2.6.8"
     doctrine "1.5.0"
     eslint-import-resolver-node "^0.3.1"
-    eslint-module-utils "^2.1.1"
+    eslint-module-services "^2.1.1"
     has "^1.0.1"
     lodash.cond "^4.3.0"
     minimatch "^3.0.3"
@@ -2339,7 +2339,7 @@ eslint-plugin-jsx-a11y@5.1.1:
     axobject-query "^0.1.0"
     damerau-levenshtein "^1.0.0"
     emoji-regex "^6.1.0"
-    jsx-ast-utils "^1.4.0"
+    jsx-ast-services "^1.4.0"
 
 eslint-plugin-react@7.4.0:
   version "7.4.0"
@@ -2347,7 +2347,7 @@ eslint-plugin-react@7.4.0:
   dependencies:
     doctrine "^2.0.0"
     has "^1.0.1"
-    jsx-ast-utils "^2.0.0"
+    jsx-ast-services "^2.0.0"
     prop-types "^15.5.10"
 
 eslint-scope@^3.7.1:
@@ -2550,7 +2550,7 @@ express@^4.13.3:
     setprototypeof "1.1.0"
     statuses "~1.4.0"
     type-is "~1.6.16"
-    utils-merge "1.0.1"
+    services-merge "1.0.1"
     vary "~1.1.2"
 
 extend-shallow@^2.0.1:
@@ -2602,8 +2602,8 @@ extract-text-webpack-plugin@3.0.2:
   resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-3.0.2.tgz#5f043eaa02f9750a9258b78c0a6e0dc1408fb2f7"
   dependencies:
     async "^2.4.1"
-    loader-utils "^1.1.0"
-    schema-utils "^0.3.0"
+    loader-services "^1.1.0"
+    schema-services "^0.3.0"
     webpack-sources "^1.0.1"
 
 extsprintf@1.3.0:
@@ -2687,8 +2687,8 @@ file-loader@1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.5.tgz#91c25b6b6fbe56dae99f10a425fd64933b5c9daa"
   dependencies:
-    loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
+    loader-services "^1.0.2"
+    schema-services "^0.3.0"
 
 filename-regex@^2.0.0:
   version "2.0.1"
@@ -3116,7 +3116,7 @@ hmac-drbg@^1.0.0:
   dependencies:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
-    minimalistic-crypto-utils "^1.0.1"
+    minimalistic-crypto-services "^1.0.1"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -3176,7 +3176,7 @@ html-webpack-plugin@2.29.0:
   dependencies:
     bluebird "^3.4.7"
     html-minifier "^3.2.3"
-    loader-utils "^0.2.16"
+    loader-services "^0.2.16"
     lodash "^4.17.3"
     pretty-error "^2.0.2"
     toposort "^1.0.0"
@@ -3261,7 +3261,7 @@ icss-replace-symbols@^1.1.0:
 
 icss-utils@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/icss-utils/-/icss-utils-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
+  resolved "https://registry.yarnpkg.com/icss-services/-/icss-services-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
   dependencies:
     postcss "^6.0.1"
 
@@ -3800,7 +3800,7 @@ jest-config@^20.0.4:
     jest-environment-jsdom "^20.0.3"
     jest-environment-node "^20.0.3"
     jest-jasmine2 "^20.0.4"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     jest-regex-util "^20.0.3"
     jest-resolve "^20.0.4"
     jest-validate "^20.0.3"
@@ -3812,7 +3812,7 @@ jest-diff@^20.0.3:
   dependencies:
     chalk "^1.1.3"
     diff "^3.2.0"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     pretty-format "^20.0.3"
 
 jest-docblock@^20.0.3:
@@ -3852,7 +3852,7 @@ jest-jasmine2@^20.0.4:
     chalk "^1.1.3"
     graceful-fs "^4.1.11"
     jest-diff "^20.0.3"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     jest-matchers "^20.0.3"
     jest-message-util "^20.0.3"
     jest-snapshot "^20.0.3"
@@ -3861,7 +3861,7 @@ jest-jasmine2@^20.0.4:
 
 jest-matcher-utils@^20.0.3:
   version "20.0.3"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-20.0.3.tgz#b3a6b8e37ca577803b0832a98b164f44b7815612"
+  resolved "https://registry.yarnpkg.com/jest-matcher-services/-/jest-matcher-services-20.0.3.tgz#b3a6b8e37ca577803b0832a98b164f44b7815612"
   dependencies:
     chalk "^1.1.3"
     pretty-format "^20.0.3"
@@ -3871,7 +3871,7 @@ jest-matchers@^20.0.3:
   resolved "https://registry.yarnpkg.com/jest-matchers/-/jest-matchers-20.0.3.tgz#ca69db1c32db5a6f707fa5e0401abb55700dfd60"
   dependencies:
     jest-diff "^20.0.3"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     jest-message-util "^20.0.3"
     jest-regex-util "^20.0.3"
 
@@ -3931,7 +3931,7 @@ jest-snapshot@^20.0.3:
   dependencies:
     chalk "^1.1.3"
     jest-diff "^20.0.3"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     jest-util "^20.0.3"
     natural-compare "^1.4.0"
     pretty-format "^20.0.3"
@@ -3953,7 +3953,7 @@ jest-validate@^20.0.3:
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-20.0.3.tgz#d0cfd1de4f579f298484925c280f8f1d94ec3cab"
   dependencies:
     chalk "^1.1.3"
-    jest-matcher-utils "^20.0.3"
+    jest-matcher-services "^20.0.3"
     leven "^2.1.0"
     pretty-format "^20.0.3"
 
@@ -4082,11 +4082,11 @@ jsprim@^1.2.2:
 
 jsx-ast-utils@^1.4.0:
   version "1.4.1"
-  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
+  resolved "https://registry.yarnpkg.com/jsx-ast-services/-/jsx-ast-services-1.4.1.tgz#3867213e8dd79bf1e8f2300c0cfc1efb182c0df1"
 
 jsx-ast-utils@^2.0.0:
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
+  resolved "https://registry.yarnpkg.com/jsx-ast-services/-/jsx-ast-services-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
   dependencies:
     array-includes "^3.0.3"
 
@@ -4179,7 +4179,7 @@ loader-runner@^2.3.0:
 
 loader-utils@^0.2.16:
   version "0.2.17"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
+  resolved "https://registry.yarnpkg.com/loader-services/-/loader-services-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
@@ -4188,7 +4188,7 @@ loader-utils@^0.2.16:
 
 loader-utils@^1.0.2, loader-utils@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
+  resolved "https://registry.yarnpkg.com/loader-services/-/loader-services-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
@@ -4442,7 +4442,7 @@ minimalistic-assert@^1.0.0:
 
 minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
+  resolved "https://registry.yarnpkg.com/minimalistic-crypto-services/-/minimalistic-crypto-services-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
 minimatch@3.0.3:
   version "3.0.3"
@@ -5143,10 +5143,10 @@ postcss-loader@2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.0.8.tgz#8c67ddb029407dfafe684a406cfc16bad2ce0814"
   dependencies:
-    loader-utils "^1.1.0"
+    loader-services "^1.1.0"
     postcss "^6.0.0"
     postcss-load-config "^1.2.0"
-    schema-utils "^0.3.0"
+    schema-services "^0.3.0"
 
 postcss-merge-idents@^2.1.5:
   version "2.1.7"
@@ -5521,7 +5521,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
 
 react-dev-utils@^5.0.1:
   version "5.0.1"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-5.0.1.tgz#1f396e161fe44b595db1b186a40067289bf06613"
+  resolved "https://registry.yarnpkg.com/react-dev-services/-/react-dev-services-5.0.1.tgz#1f396e161fe44b595db1b186a40067289bf06613"
   dependencies:
     address "1.0.3"
     babel-code-frame "6.26.0"
@@ -5588,7 +5588,7 @@ react-scripts@1.1.4:
     postcss-loader "2.0.8"
     promise "8.0.1"
     raf "3.4.0"
-    react-dev-utils "^5.0.1"
+    react-dev-services "^5.0.1"
     resolve "1.6.0"
     style-loader "0.19.0"
     sw-precache-webpack-plugin "0.11.4"
@@ -5967,7 +5967,7 @@ sax@^1.2.1, sax@^1.2.4, sax@~1.2.1:
 
 schema-utils@^0.3.0:
   version "0.3.0"
-  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
+  resolved "https://registry.yarnpkg.com/schema-services/-/schema-services-0.3.0.tgz#f5877222ce3e931edae039f17eb3716e7137f8cf"
   dependencies:
     ajv "^5.0.0"
 
@@ -6382,8 +6382,8 @@ style-loader@0.19.0:
   version "0.19.0"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.19.0.tgz#7258e788f0fee6a42d710eaf7d6c2412a4c50759"
   dependencies:
-    loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
+    loader-services "^1.0.2"
+    schema-services "^0.3.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -6748,9 +6748,9 @@ url-loader@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-0.6.2.tgz#a007a7109620e9d988d14bce677a1decb9a993f7"
   dependencies:
-    loader-utils "^1.0.2"
+    loader-services "^1.0.2"
     mime "^1.4.1"
-    schema-utils "^0.3.0"
+    schema-services "^0.3.0"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"
@@ -6804,7 +6804,7 @@ utila@~0.4:
 
 utils-merge@1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
+  resolved "https://registry.yarnpkg.com/services-merge/-/services-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
 
 uuid@^2.0.2:
   version "2.0.3"
@@ -6946,7 +6946,7 @@ webpack@3.8.1:
     json-loader "^0.5.4"
     json5 "^0.5.1"
     loader-runner "^2.3.0"
-    loader-utils "^1.1.0"
+    loader-services "^1.1.0"
     memory-fs "~0.4.1"
     mkdirp "~0.5.0"
     node-libs-browser "^2.0.0"
