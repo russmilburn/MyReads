@@ -12,6 +12,7 @@ class Bookshelf extends React.Component {
   };
   
   render() {
+    //TODO REFACTOR break out to Book component to be reused
     const {title, books, optionsList, onUpdateBookshelf} = this.props;
     
     return (
@@ -19,7 +20,6 @@ class Bookshelf extends React.Component {
         <h2 className='bookshelf-title'>{title}</h2>
         <ol className='books-grid'>
           {books.map((book) => (
-            //TODO break out to component
             <li key={book.id}>
               <div className='book'>
                 <div className='book-top'>

@@ -5,6 +5,7 @@ import {Route} from 'react-router-dom';
 import SearchBooks from './components/SearchBooks';
 import * as BooksAPI from './services/BooksAPI';
 import Bookshelf from './components/Bookshelf';
+import {Link} from 'react-router-dom';
 
 class App extends Component {
   
@@ -29,14 +30,14 @@ class App extends Component {
   };
   
   componentDidMount() {
-    console.log('componentDidMount');
+    // console.log('componentDidMount');
     this.getAllBooks();
   }
   
   updateBookStatus(book, updatedStatus) {
     BooksAPI.update(book, updatedStatus)
       .then(() => {
-        //TODO this is inefficient as it call the server after every change
+        //TODO REFACTOR this is inefficient app will call the server after every change
         this.getAllBooks();
       })
   }
@@ -44,7 +45,7 @@ class App extends Component {
   getAllBooks() {
     BooksAPI.getAll()
       .then((bookList) => {
-        console.log('getBookList' + bookList);
+        // console.log('getBookList' + bookList);
         this.setState((currentState) => ({
           books: bookList
         }))
@@ -72,8 +73,10 @@ class App extends Component {
                   onUpdateBookshelf={this.updateBookStatus.bind(this)}/>
               ))}
             </div>
+            <div className='open-search'>
+              <Link to='/search'></Link>
+            </div>
           </div>
-        
         )}/>
         <Route exact path='/search' render={() => (
           <SearchBooks/>
