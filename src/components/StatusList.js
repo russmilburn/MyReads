@@ -4,20 +4,24 @@ import PropTypes from 'prop-types';
 class StatusList extends React.Component {
   
   static propTypes = {
-    optionsList: PropTypes.array.isRequired
+    optionsList: PropTypes.array.isRequired,
+    book : PropTypes.object.isRequired,
+    onUpdateBookshelf: PropTypes.func.isRequired
   };
   
   render() {
-    const {optionsList} = this.props;
+    const {optionsList, book, onUpdateBookshelf} = this.props;
     return (
       <div className='book-shelf-changer'>
-        <select>
-          <option value='move' disabled='true'>Move to...</option>
+        <select value={book.shelf} onChange={(event)=>{
+          onUpdateBookshelf(book, event.target.value);
+        }}>
+          <option value='move' disabled >Move to...</option>
           {optionsList.map((option) => (
-            <option value={option.id}>{option.displayName}</option>
+            <option key={option.id} value={option.id}>{option.displayName}</option>
           ))}
           <option value='none'>None</option>
-        </select>
+        </select >
       </div>
     )
   }

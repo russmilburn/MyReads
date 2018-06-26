@@ -8,10 +8,11 @@ class Bookshelf extends React.Component {
     title: PropTypes.string.isRequired,
     books: PropTypes.array.isRequired,
     optionsList: PropTypes.array.isRequired,
+    onUpdateBookshelf : PropTypes.func.isRequired
   };
   
   render() {
-    const {title, books, optionsList} = this.props;
+    const {title, books, optionsList, onUpdateBookshelf} = this.props;
     
     return (
       <div>
@@ -27,12 +28,14 @@ class Bookshelf extends React.Component {
                     height: 193,
                     backgroundImage: `url(${book.imageLinks.thumbnail})`
                   }}/>
-                  <StatusList optionsList={optionsList}/>
+                  <StatusList optionsList={optionsList}
+                              book={book}
+                              onUpdateBookshelf={onUpdateBookshelf}/>
                 </div>
                 <div className='book-title'>{book.title}</div>
                 {
-                  book.authors.map((author) =>(
-                    <div className='book-authors'>{author}</div>
+                  book.authors.map((author) => (
+                    <div key={author} className='book-authors'>{author}</div>
                   ))
                 }
               </div>

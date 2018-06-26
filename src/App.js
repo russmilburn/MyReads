@@ -33,6 +33,14 @@ class App extends Component {
     this.getAllBooks();
   }
   
+  updateBookStatus(book, updatedStatus) {
+    BooksAPI.update(book, updatedStatus)
+      .then(() => {
+        //TODO this is inefficient as it call the server after every change
+        this.getAllBooks();
+      })
+  }
+  
   getAllBooks() {
     BooksAPI.getAll()
       .then((bookList) => {
@@ -57,10 +65,11 @@ class App extends Component {
                 <Bookshelf
                   key={shelf.id}
                   title={shelf.displayName}
-                  books={this.state.books.filter((books)=>(
+                  books={this.state.books.filter((books) => (
                     books.shelf === shelf.id
                   ))}
-                  optionsList={this.state.bookshelves}/>
+                  optionsList={this.state.bookshelves}
+                  onUpdateBookshelf={this.updateBookStatus.bind(this)}/>
               ))}
             </div>
           </div>
