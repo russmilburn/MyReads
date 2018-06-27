@@ -8,12 +8,27 @@ class StatusList extends React.Component {
     book : PropTypes.object.isRequired,
     onUpdateBookshelf: PropTypes.func.isRequired
   };
+
+  isValid(param) {
+    if (param !== null && typeof param !== 'undefined' && param !== '' ){
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  checkShelf(){
+    if(this.isValid(this.props.book.shelf)){
+      return this.props.book.shelf;
+    }
+    return 'none';
+  }
   
   render() {
     const {optionsList, book, onUpdateBookshelf} = this.props;
     return (
       <div className='book-shelf-changer'>
-        <select value={book.shelf} onChange={(event)=>{
+        <select value={this.checkShelf()} onChange={(event)=>{
           onUpdateBookshelf(book, event.target.value);
         }}>
           <option value='move' disabled >Move to...</option>

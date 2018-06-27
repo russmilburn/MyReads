@@ -51,7 +51,7 @@ class App extends Component {
         }))
       })
   }
-  
+
   render() {
     return (
       <div className="App">
@@ -60,7 +60,7 @@ class App extends Component {
             <div className='list-books-title'>
               <h1>My Reads</h1>
             </div>
-            
+
             <div>
               {this.state.bookshelves.map((shelf) => (
                 <Bookshelf
@@ -79,7 +79,8 @@ class App extends Component {
           </div>
         )}/>
         <Route exact path='/search' render={() => (
-          <SearchBooks/>
+          <SearchBooks optionsList={this.state.bookshelves}
+            onUpdateBookshelf={this.updateBookStatus.bind(this)}/>
         )}/>
       </div>
     );

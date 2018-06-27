@@ -10,6 +10,31 @@ class Book extends React.Component{
     onUpdateBookshelf : PropTypes.func.isRequired
   };
 
+  isValid(param) {
+    if (param !== null && typeof param !== 'undefined' && param !== '' ){
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  getAuthorList(){
+    const authorList = this.props.book.authors;
+    if (this.isValid(authorList)){
+      return (
+        authorList.map((author) => (
+          <div key={author} className='book-authors'>{author}</div>
+        ))
+      )
+    }
+  }
+
+  getBookCover(){
+    if (this.isValid(this.props.book.imageLinks)) {
+      return this.props.book.imageLinks.thumbnail;
+    }
+  }
+
   render() {
 
     const {book, optionsList, onUpdateBookshelf} = this.props;
@@ -20,7 +45,7 @@ class Book extends React.Component{
           <div className='book-cover' style={{
             width: 123,
             height: 193,
-            backgroundImage: `url(${book.imageLinks.thumbnail})`
+            backgroundImage: `url(${this.getBookCover()})`
           }}/>
           <StatusList optionsList={optionsList}
                       book={book}
@@ -28,9 +53,7 @@ class Book extends React.Component{
         </div>
         <div className='book-title'>{book.title}</div>
         {
-          book.authors.map((author) => (
-            <div key={author} className='book-authors'>{author}</div>
-          ))
+          this.getAuthorList()
         }
       </div>
     )
