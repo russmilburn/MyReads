@@ -1,63 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StatusList from './StatusList'
+import StatusList from './StatusList';
+import {isValid} from "../utils/helpers";
 
-class Book extends React.Component{
 
-  static propTypes = {
-    book: PropTypes.object.isRequired,
-    optionsList: PropTypes.array.isRequired,
-    onUpdateBookshelf : PropTypes.func.isRequired
-  };
+const Book = ({book, optionsList, onUpdateBookshelf}) => {
+  const {imageLinks, title, authors} = book;
 
-  isValid(param) {
-    if (param !== null && typeof param !== 'undefined' && param !== '' ){
-      return true;
-    } else {
-      return false;
-    }
-  };
+  const bookCover =  imageLinks ? imageLinks.thumbnail : 'http://via.placeholder.com/128x193?text=No%20Cover';
 
-  getAuthorList(){
-    const authorList = this.props.book.authors;
-    if (this.isValid(authorList)){
+  function getAuthorList(){
+    if (isValid(authors)){
       return (
-        authorList.map((author) => (
+        authors.map((author) => (
           <div key={author} className='book-authors'>{author}</div>
         ))
       )
     }
   }
 
-  getBookCover(){
-    if (this.isValid(this.props.book.imageLinks)) {
-      return this.props.book.imageLinks.thumbnail;
-    }
-  }
-
-  render() {
-
-    const {book, optionsList, onUpdateBookshelf} = this.props;
-
-    return (
-      <div className='book'>
-        <div className='book-top'>
-          <div className='book-cover' style={{
-            width: 123,
-            height: 193,
-            backgroundImage: `url(${this.getBookCover()})`
-          }}/>
-          <StatusList optionsList={optionsList}
-                      book={book}
-                      onUpdateBookshelf={onUpdateBookshelf}/>
-        </div>
-        <div className='book-title'>{book.title}</div>
-        {
-          this.getAuthorList()
-        }
+  return (
+    <div className='book'>
+      <div className='book-top'>
+        <div className='book-cover' style={{
+          width: 123,
+          height: 193,
+          backgroundImage: `url(${bookCover})`
+        }}/>
+        <StatusList optionsList={optionsList}
+                    book={book}
+                    onUpdateBookshelf={onUpdateBookshelf}/>
       </div>
-    )
-  }
-}
+      <div className='book-title'>{title}</div>
+      {getAuthorList()}
+    </div>
+  )
+};
+
+Book.propTypes = {
+  book: PropTypes.object.isRequired,
+  optionsList: PropTypes.array.isRequired,
+  onUpdateBookshelf : PropTypes.func.isRequired
+};
 
 export default Book
