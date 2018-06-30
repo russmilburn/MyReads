@@ -8,8 +8,11 @@ import Bookshelf from './components/Bookshelf';
 import {Link} from 'react-router-dom';
 
 class App extends Component {
-  
-  
+  constructor() {
+    super();
+    this.updatedBookStatus = this.updateBookStatus.bind(this);
+  }
+
   state = {
     bookshelves: [
       {
@@ -26,22 +29,25 @@ class App extends Component {
       }
     ],
     books: []
-    
+
   };
-  
+
   componentDidMount() {
-    // console.log('componentDidMount');
     this.getAllBooks();
   }
-  
+
   updateBookStatus(book, updatedStatus) {
-    BooksAPI.update(book, updatedStatus)
-      .then(() => {
-        //TODO REFACTOR this is inefficient app will call the server after every change
-        this.getAllBooks();
-      })
+    if (book.shelf !== updatedStatus) {
+      BooksAPI.update(book, updatedStatus)
+        .then(() => {
+          book.shelf = updatedStatus;
+          this.setState((currentState) => ({
+            books : currentState.books.filter(b => b.id !== book.id).concat([book])
+          }))
+        })
+    }
   }
-  
+
   getAllBooks() {
     BooksAPI.getAll()
       .then((bookList) => {
@@ -70,7 +76,7 @@ class App extends Component {
                     books.shelf === shelf.id
                   ))}
                   optionsList={this.state.bookshelves}
-                  onUpdateBookshelf={this.updateBookStatus.bind(this)}/>
+                  onUpdateBookshelf={this.updatedBookStatus}/>
               ))}
             </div>
             <div className='open-search'>
@@ -80,7 +86,7 @@ class App extends Component {
         )}/>
         <Route exact path='/search' render={() => (
           <SearchBooks optionsList={this.state.bookshelves}
-            onUpdateBookshelf={this.updateBookStatus.bind(this)}/>
+                       onUpdateBookshelf={this.updatedBookStatus}/>
         )}/>
       </div>
     );
