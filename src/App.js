@@ -42,7 +42,7 @@ class App extends Component {
         .then(() => {
           book.shelf = updatedStatus;
           this.setState((currentState) => ({
-            books : currentState.books.filter(b => b.id !== book.id).concat([book])
+            books: currentState.books.filter(b => b.id !== book.id).concat([book])
           }))
         })
     }
@@ -51,7 +51,7 @@ class App extends Component {
   getAllBooks() {
     BooksAPI.getAll()
       .then((bookList) => {
-        // console.log('getBookList' + bookList);
+        console.log('getBookList');
         this.setState((currentState) => ({
           books: bookList
         }))
@@ -86,7 +86,8 @@ class App extends Component {
         )}/>
         <Route exact path='/search' render={() => (
           <SearchBooks optionsList={this.state.bookshelves}
-                       onUpdateBookshelf={this.updatedBookStatus}/>
+                       onUpdateBookshelf={this.updatedBookStatus}
+                       books={this.state.books}/>
         )}/>
       </div>
     );

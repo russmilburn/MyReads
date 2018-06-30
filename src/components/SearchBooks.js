@@ -3,17 +3,20 @@ import * as BooksAPI from './../services/BooksAPI';
 import {Link} from 'react-router-dom';
 import Book from "./Book";
 import PropTypes from "prop-types";
+import {isValid} from "../utils/helpers";
 
 class SearchBooks extends React.Component {
 
   static propTypes = {
+    books: PropTypes.array.isRequired,
     optionsList: PropTypes.array.isRequired,
-    onUpdateBookshelf : PropTypes.func.isRequired
+    onUpdateBookshelf: PropTypes.func.isRequired
   };
 
   state = {
     query: '',
-    books: []
+    searchResults: [],
+    books: this.props.books,
   };
 
   updateSearch(query) {
@@ -30,22 +33,37 @@ class SearchBooks extends React.Component {
           if (data.error === 'empty query') {
             return;
           } else {
+            data.forEach((item) => {
+              let shelf = this.getBookshelf(item.id, item.title);
+              item.shelf = shelf;
+            });
             this.setState(() => ({
-              books: data
+              searchResults: data
             }))
           }
         })
     }
   }
 
+  getBookshelf(id, title) {
+    const books = this.state.books;
+    console.log(id, title);
+    const book = books.find((b) => (b.id === id));
+    if (!isValid(book)) {
+      return 'none'
+    } else {
+      return book.shelf
+    }
+  }
+
   clearSearch() {
     this.setState(() => ({
-      books: []
+      searchResults: []
     }))
   }
 
   render() {
-    const {books} = this.state;
+    const {searchResults} = this.state;
 
     const {optionsList, onUpdateBookshelf} = this.props;
 
@@ -64,7 +82,7 @@ class SearchBooks extends React.Component {
         </div>
         <div className='search-books-results'>
           <ol className='books-grid'>
-            {books.map((book) => (
+            {searchResults.map((book) => (
               <li key={book.id}>
                 <Book book={book}
                       optionsList={optionsList}
